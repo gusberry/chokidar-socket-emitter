@@ -49,7 +49,7 @@ module.exports = (opts, cb) => {
     }
     console.log('File ', onPath, ' emitted: ' + event)
     socketsConnected.forEach((socket) => {
-      socket.emit(event, {path: onPath, absolutePath})
+      socket.emit(event, {path: onPath, absolutePath: absolutePath})
     })
   })
   io.on('connection', (socket) => {
